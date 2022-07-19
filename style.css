@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    max-width: 800px;
+    margin: 20rem auto;
+    text-align: center;
+  }
+  
+  section {
+    width: 100%;
+    position: relative;
+  }
+  
+  section ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  section ul li {
+    list-style: none;
+  }
+  
+  i {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 15px 0 0 18px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: darkgreen;
+    padding: 6px 21px;
+  }
+
+  .seeds i{
+    background: rgb(235 124 124 / 43%);
+  }
+
+  .seedling i{
+    background:rgb(241, 186, 166);
+  }
+  .tree i{
+      background: rgb(223, 221, 146);
+  }
+
+  .fruit i{
+      background: lightcyan;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    height: 747px;
+    width: 2px;
+    top: -230px;
+    bottom: 0;
+    left: 380px;
+    z-index: -1;
+    background: black;
+    transform: rotate(90deg);
+  }
+
+  section ul li::after{
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    top: 135px;
+  }
+  
+  
+  
+  @media only screen and (max-width: 768px) {
+    body {
+      max-width: 400px;
+      margin: 1rem auto;
+    }
+    section {
+      width: 80%;
+      padding: 0 3rem 2rem;
+    }
+    section ul {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    section::before {
+        content: "";
+        position: absolute;
+        height: 486px;
+        width: 2px;
+        top: 0;
+        bottom: 20px;
+        left: 24px;
+        z-index: -1;
+        background: black;
+        transform: rotate(0deg);
+      }
+    
+      section ul li::after{
+        content: "";
+        position: absolute;
+        height: 13px;
+        width: 13px;
+        background: white;
+        border: 1px solid black;
+        border-radius: 50%;
+        left: 17px;
+      }
+    
+  
+    @media only screen and (max-width: 992px) {
+      body {
+        max-width: 400px;
+      }
+    }
+  }
+  
