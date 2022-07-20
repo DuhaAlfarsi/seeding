@@ -33,7 +33,6 @@
     font-size: 30px;
     margin-bottom: 20px;
     color: darkgreen;
-    padding: 6px 21px;
   }
 
   .seeds i{
@@ -71,38 +70,36 @@
     background: white;
     border: 1px solid black;
     border-radius: 50%;
-    top: 135px;
+    bottom: -28px;
   }
   
   
   
   @media only screen and (max-width: 768px) {
     body {
-      max-width: 400px;
+      width: 100%;
       margin: 1rem auto;
     }
     section {
       width: 80%;
       padding: 0 3rem 2rem;
     }
+    section::before {
+      content: "";
+      position: absolute;
+      height: 488px;
+      width: 2px;
+      top: 0;
+      bottom: 0;
+      left: 23px;
+      z-index: -1;
+      background: black;
+      transform: rotate(0deg);
+    }
     section ul {
       grid-template-columns: repeat(1, 1fr);
     }
-  
-    section::before {
-        content: "";
-        position: absolute;
-        height: 486px;
-        width: 2px;
-        top: 0;
-        bottom: 20px;
-        left: 24px;
-        z-index: -1;
-        background: black;
-        transform: rotate(0deg);
-      }
-    
-      section ul li::after{
+      section ul li::before{
         content: "";
         position: absolute;
         height: 13px;
@@ -112,12 +109,16 @@
         border-radius: 50%;
         left: 17px;
       }
-    
-  
-    @media only screen and (max-width: 992px) {
+      section ul li::after{
+        display: none;
+  }
+}
+
+  @media screen 
+    and(min-width: 768px)
+    and(max-width: 992px){
       body {
         max-width: 400px;
       }
     }
-  }
   
